@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {{ .Title }}
+    </title>
+    <meta name="description" content="{{ .Description }}">
+    {{/* styles */}}
+    {{ $options := dict "inlineImports" true }}
+    {{ $styles := resources.Get "css/styles.css" }}
+    {{ $styles = $styles | resources.PostCSS $options }}
+    {{ if  hugo.IsProduction  }}
+      {{ $styles = $styles | minify | fingerprint | resources.PostProcess }}
+    {{ end }}
+    <link href="{{ $styles.RelPermalink }}" rel="stylesheet" />
+  </head>
+  <body class="my-10">
+  {{- partial "dev-size-indicator.html" . -}}
+    <div class="container px-4 lg:mx-auto">
+      {{ block "main" . }}{{ end }}
+    </div>
+    {{- partial "dev-parameters.html" . -}}
+  </body>
+</html>

@@ -1,0 +1,24 @@
+{
+ "comments": {
+  "dependencies": {},
+  "devDependencies": {
+   "@tailwindcss/typography": "project",
+   "autoprefixer": "project",
+   "postcss": "project",
+   "postcss-cli": "project",
+   "postcss-purgecss": "project",
+   "tailwindcss": "project"
+  }
+ },
+ "dependencies": {},
+ "devDependencies": {
+  "@tailwindcss/typography": "^0.3.1",
+  "autoprefixer": "^10.0.2",
+  "postcss": "^8.1.10",
+  "postcss-cli": "^8.0.0",
+  "postcss-purgecss": "^2.0.3",
+  "tailwindcss": "^2.0.1"
+ },
+ "name": "windytails",
+ "version": "0.0.1"
+}
